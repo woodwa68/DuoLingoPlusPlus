@@ -1,0 +1,38 @@
+{
+  "name": "Duolingo++",
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "description": "Adds a few handy keyboard shortcuts to Duolingo",
+  "content_scripts": [{
+    "js": [ "content.js"],
+    "matches": [ "<all_urls>"]
+   }],
+  "background": {
+    "scripts": ["background.js"]
+   },
+   "permissions": ["contextMenus", "tabs","https://www.duolingo.com/*"],
+
+   "commands": {
+    "repeatAudio": {
+      "suggested_key": {
+        "default": "Alt+K",
+        "mac": "Command+K"
+      },
+      "description": "Repeat Audio"
+    },
+    "repeatAudioSlowly": {
+      "suggested_key": {
+        "default": "Alt+L",
+        "mac": "Command+L"
+      },
+      "description": "Repeat Audio Except Slowly"
+    },
+    "toggleChallengeText": {
+      "suggested_key": {
+        "default": "Alt+H",
+        "mac": "Command+H"
+      },
+      "description": "Hide Challenge Text (Toggle)"
+    }
+  }
+}
